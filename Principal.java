@@ -1,4 +1,5 @@
 import br.com.testesalura.screenmatch.modelos.Filmes;
+import br.com.testesalura.screenmatch.modelos.Series;
 
 public class Principal {
     public static void main(String[] args) {
@@ -16,5 +17,11 @@ public class Principal {
         System.out.println("Avaliação: " + meuFilme.getAvaliacao());
         System.out.println("Total de Avaliações: " + meuFilme.getTotalAvaliacoes());
         System.out.println("Media: " + meuFilme.obterMedia());
+
+        Series minhaSerie = new Series();
+        minhaSerie.setNome("Peaky Blinders");
+        minhaSerie.setAnoDeLancamento(2018);
+        minhaSerie.setProdutora("NetFlix");
+        minhaSerie.exibiFichaTecnica();
     }
 }
