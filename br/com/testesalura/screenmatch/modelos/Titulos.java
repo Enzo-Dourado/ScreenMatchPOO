@@ -1,46 +1,64 @@
 package br.com.testesalura.screenmatch.modelos;
 
-public abstract class Titulos {
-    private String nome;
-    private String produtora;
-    private int anoDeLancamento;
-    private boolean incluidoNoPlano;
-    private double avaliacao;
-    private int totalAvaliacoes;
+public class Titulos {
 
-    public void exibiFichaTecnica() {
-        System.out.println("Nome: " + nome);
-        System.out.println("Produtora: " + produtora);
-        System.out.println("Ano de lancamento: " + anoDeLancamento);
+    private String nome;
+    private int anoDeLancamento;
+    private int duracaoEmMinutos;
+    private boolean incluidoNoPlano;
+    private double somaDasAvaliacoes;
+    private int totalDeAvaliacoes;
+
+    public void exibeFichaTecnica() {
+        System.out.println("Nome do filme: " + nome);
+        System.out.println("Ano de lançamento:" + anoDeLancamento);
+        System.out.println("Duração em minutos:" + duracaoEmMinutos);
+        System.out.println("Incluído no plano:" + incluidoNoPlano);
+    }
+
+    public void avalia(double nota) {
+        somaDasAvaliacoes += nota;
+        totalDeAvaliacoes++;
+    }
+
+    public double pegaMedia() {
+        return somaDasAvaliacoes / totalDeAvaliacoes;
+    }
+
+    public String getNome() {
+        return this.nome;
     }
 
     public void setNome(String nome) {
         this.nome = nome;
     }
 
-    public void setProdutora(String produtora) {
-        this.produtora = produtora;
+    public int getAnoDeLancamento() {
+        return this.anoDeLancamento;
     }
 
     public void setAnoDeLancamento(int anoDeLancamento) {
         this.anoDeLancamento = anoDeLancamento;
     }
 
-    public double getAvaliacao() {
-        return avaliacao;
+    public boolean getIncluidoNoPlano() {
+        return this.incluidoNoPlano;
     }
 
-    public int getTotalAvaliacoes() {
-        return totalAvaliacoes;
+    public void setIncluidoNoPlano(boolean incluidoNoPlano) {
+        this.incluidoNoPlano = incluidoNoPlano;
     }
 
-    public void avalia(double nota) {
-        avaliacao += nota;
-        totalAvaliacoes++;
+    public int getDuracaoEmMinutos() {
+        return this.duracaoEmMinutos;
     }
 
-    public double obterMedia() {
-        return avaliacao / totalAvaliacoes;
+    public void setDuracaoEmMinutos(int duracaoEmMinutos) {
+        this.duracaoEmMinutos = duracaoEmMinutos;
+    }
+
+    public int getTotalDeAvaliacoes() {
+        return this.totalDeAvaliacoes;
     }
 
 }

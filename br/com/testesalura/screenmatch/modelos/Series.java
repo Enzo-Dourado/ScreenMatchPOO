@@ -1,10 +1,11 @@
 package br.com.testesalura.screenmatch.modelos;
 
-public class Series extends Titulos{
+public class Series extends Titulos {
+
     private int temporadas;
-    private int episodiosPorTemporada;
     private boolean ativa;
-    private int minutosPorEpisodios;
+    private int episodiosPorTemporada;
+    private int minutosPorEpisodio;
 
     public int getTemporadas() {
         return temporadas;
@@ -12,14 +13,6 @@ public class Series extends Titulos{
 
     public void setTemporadas(int temporadas) {
         this.temporadas = temporadas;
-    }
-
-    public int getEpisodiosPorTemporada() {
-        return episodiosPorTemporada;
-    }
-
-    public void setEpisodiosPorTemporada(int episodiosPorTemporada) {
-        this.episodiosPorTemporada = episodiosPorTemporada;
     }
 
     public boolean isAtiva() {
@@ -30,15 +23,26 @@ public class Series extends Titulos{
         this.ativa = ativa;
     }
 
-    public int getMinutosPorEpisodios() {
-        return minutosPorEpisodios;
+    public int getEpisodiosPorTemporada() {
+        return episodiosPorTemporada;
     }
 
-    public void setMinutosPorEpisodios(int minutosPorEpisodios) {
-        this.minutosPorEpisodios = minutosPorEpisodios;
+    public void setEpisodiosPorTemporada(int episodiosPorTemporada) {
+        this.episodiosPorTemporada = episodiosPorTemporada;
     }
 
-    public int totalAvaliacoes() {
-        return temporadas * episodiosPorTemporada * minutosPorEpisodios;
-    };
+    public int getMinutosPorEpisodio() {
+        return minutosPorEpisodio;
+    }
+
+    public void setMinutosPorEpisodio(int minutosPorEpisodio) {
+        this.minutosPorEpisodio = minutosPorEpisodio;
+    }
+
+    @Override
+    public int getDuracaoEmMinutos() {
+        return temporadas * episodiosPorTemporada * minutosPorEpisodio;
+    }
+
 }
+
