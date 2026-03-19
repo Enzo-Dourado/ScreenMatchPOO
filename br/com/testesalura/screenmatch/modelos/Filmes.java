@@ -1,6 +1,8 @@
 package br.com.testesalura.screenmatch.modelos;
 
-public class Filmes extends Titulos {
+import br.com.testesalura.screenmatch.calculadora.Classificavel;
+
+public class Filmes extends Titulos implements Classificavel {
 
     private String diretor;
 
@@ -12,4 +14,8 @@ public class Filmes extends Titulos {
         this.diretor = diretor;
     }
 
+    @Override
+    public int getClassificacao() {
+        return 0;
+    }
 }
