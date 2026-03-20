@@ -29,6 +29,9 @@ public class Principal {
         outroFilme.setIncluidoNoPlano(true);
         outroFilme.avalia(10);
 
+        Filmes filmeConstrutor = new Filmes("Peaky Blinders - O homem imortal");
+        filmeConstrutor.setAnoDeLancamento(2026);
+
         Series serie = new Series();
         serie.setNome("La Casa de Papel");
         serie.setAnoDeLancamento(2017);
@@ -58,6 +61,7 @@ public class Principal {
         listaFilmes.add(favorito);
         listaFilmes.add(outro);
         listaFilmes.add(outroFilme);
+        listaFilmes.add(filmeConstrutor);
 
         System.out.println("Tamanho da Lista: " + listaFilmes.size());
         System.out.println("Filme da Primeira Posição: " + listaFilmes.getFirst().getNome());
