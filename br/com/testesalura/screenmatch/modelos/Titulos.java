@@ -1,6 +1,6 @@
 package br.com.testesalura.screenmatch.modelos;
 
-public class Titulos {
+public class Titulos implements Comparable<Titulos>{
 
     private String nome;
     private int anoDeLancamento;
@@ -9,6 +9,10 @@ public class Titulos {
     private double somaDasAvaliacoes;
     private int totalDeAvaliacoes;
 
+    public Titulos(String nome, int anoDeLancamento){
+        this.nome = nome;
+        this.anoDeLancamento = anoDeLancamento;
+    }
     public void exibeFichaTecnica() {
         System.out.println("Nome do filme: " + nome);
         System.out.println("Ano de lançamento:" + anoDeLancamento);
@@ -59,6 +63,10 @@ public class Titulos {
 
     public int getTotalDeAvaliacoes() {
         return this.totalDeAvaliacoes;
+    }
+    @Override
+    public int compareTo(Titulos outroTitulo) {
+        return this.getNome().compareTo(outroTitulo.getNome());
     }
 
 }
