@@ -1,3 +1,5 @@
+package br.com.testesalura.screenmatch.principal;
+
 import br.com.testesalura.screenmatch.calculadora.CalculadoraDeTempo;
 import br.com.testesalura.screenmatch.calculadora.FiltroRecomendacao;
 import br.com.testesalura.screenmatch.modelos.Episodios;
