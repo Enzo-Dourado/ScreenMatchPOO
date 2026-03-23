@@ -9,6 +9,10 @@ public class Titulos {
     private double somaDasAvaliacoes;
     private int totalDeAvaliacoes;
 
+    public Titulos(String nome, int anoDeLancamento){
+        this.nome = nome;
+        this.anoDeLancamento = anoDeLancamento;
+    }
     public void exibeFichaTecnica() {
         System.out.println("Nome do filme: " + nome);
         System.out.println("Ano de lançamento:" + anoDeLancamento);

@@ -8,33 +8,24 @@ import java.util.ArrayList;
 
 public class Principal {
     public static void main(String[] args) {
-        Filmes favorito = new Filmes();
-        favorito.setNome("The Matrix");
-        favorito.setAnoDeLancamento(1999);
+        Filmes favorito = new Filmes("The Matrix", 1999);
         favorito.setDuracaoEmMinutos(135);
         favorito.setIncluidoNoPlano(true);
         favorito.avalia(6.5);
 
-        Filmes outro = new Filmes();
-        outro.setNome("John Wick");
-        outro.setAnoDeLancamento(2014);
+        Filmes outro = new Filmes("John Wick", 2014);
         outro.setDuracaoEmMinutos(101);
         outro.setIncluidoNoPlano(true);
         outro.avalia(8.5);
 
-        Filmes outroFilme = new Filmes();
-        outroFilme.setNome("Vingadores Ultimato");
-        outroFilme.setAnoDeLancamento(2019);
+        Filmes outroFilme = new Filmes("Vingadores Ultimato", 2019);
         outroFilme.setDuracaoEmMinutos(180);
         outroFilme.setIncluidoNoPlano(true);
         outroFilme.avalia(10);
 
-        Filmes filmeConstrutor = new Filmes("Peaky Blinders - O homem imortal");
-        filmeConstrutor.setAnoDeLancamento(2026);
+        Filmes filmeConstrutor = new Filmes("Peaky Blinders - O homem imortal", 2026);
 
-        Series serie = new Series();
-        serie.setNome("La Casa de Papel");
-        serie.setAnoDeLancamento(2017);
+        Series serie = new Series("La Casa de Papel", 2017);
         serie.setIncluidoNoPlano(true);
         serie.setAtiva(true);
         serie.setTemporadas(5);

@@ -14,9 +14,8 @@ public class Filmes extends Titulos implements Classificavel {
         this.diretor = diretor;
     }
 
-    public Filmes(){}
-    public Filmes(String nome) {
-        this.setNome(nome);
+    public Filmes(String nome,  int anoDeLancamento) {
+        super(nome, anoDeLancamento);
     }
 
     @Override
