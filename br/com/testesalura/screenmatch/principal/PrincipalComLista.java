@@ -6,6 +6,8 @@ import br.com.testesalura.screenmatch.modelos.Titulos;
 
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.Comparator;
+import java.util.List;
 
 public class PrincipalComLista {
     public static void main(String[] args) {
@@ -34,7 +36,7 @@ public class PrincipalComLista {
             }
         }
 
-        ArrayList<String> buscaPorArtista = new ArrayList<>();
+        List<String> buscaPorArtista = new ArrayList<>();
         buscaPorArtista.add("Ciliam Murphy");
         buscaPorArtista.add("Adam Sandler");
         buscaPorArtista.add("Tom Cruise");
@@ -46,6 +48,9 @@ public class PrincipalComLista {
 
         Collections.sort(lista);
         System.out.println("Lista de Titulos: " + lista);
+
+        lista.sort(Comparator.comparing(Titulos::getAnoDeLancamento));
+        System.out.println("Lista de Titulos por Lancamento: " + lista);
 
     }
 }
