@@ -5,6 +5,7 @@ import br.com.testesalura.screenmatch.modelos.Series;
 import br.com.testesalura.screenmatch.modelos.Titulos;
 
 import java.util.ArrayList;
+import java.util.Collections;
 
 public class PrincipalComLista {
     public static void main(String[] args) {
@@ -32,6 +33,19 @@ public class PrincipalComLista {
                 System.out.println("Avaliação: " + filme.getClassificacao() + "*");
             }
         }
+
+        ArrayList<String> buscaPorArtista = new ArrayList<>();
+        buscaPorArtista.add("Ciliam Murphy");
+        buscaPorArtista.add("Adam Sandler");
+        buscaPorArtista.add("Tom Cruise");
+
+        System.out.println("Busca por artista: " + buscaPorArtista);
+
+        Collections.sort(buscaPorArtista);
+        System.out.println("Busca por artista (Ordenado): " + buscaPorArtista);
+
+        Collections.sort(lista);
+        System.out.println("Lista de Titulos: " + lista);
 
     }
 }
