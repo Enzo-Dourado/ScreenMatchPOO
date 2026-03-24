@@ -14,6 +14,8 @@ public class PrincipalComBusca {
         var buscar = sc.nextLine();
         String url = "http://www.omdbapi.com/?t=" +  buscar + "&apikey=addb957a";
 
+
+        // Base para todas as chamadas de APIs
         HttpClient client = HttpClient.newHttpClient();
         HttpRequest request = HttpRequest.newBuilder()
                 .uri(URI.create(url))
