@@ -1,5 +1,7 @@
 package br.com.testesalura.screenmatch.modelos;
 
+import br.com.testesalura.screenmatch.excecoes.ErroNoConversorDeAnoDeLancamentoException;
+
 public class Titulos implements Comparable<Titulos>{
 
     private String nome;
@@ -13,6 +15,16 @@ public class Titulos implements Comparable<Titulos>{
         this.nome = nome;
         this.anoDeLancamento = anoDeLancamento;
     }
+
+    public Titulos(TituloOmdb meutitulo) {
+        this.nome = meutitulo.title();
+        if (meutitulo.year().length() > 4) {
+            throw new ErroNoConversorDeAnoDeLancamentoException("Valor inválido dentro do campo ano de lançamento!");
+        }
+        this.anoDeLancamento = Integer.parseInt(meutitulo.year());
+        this.duracaoEmMinutos = Integer.parseInt(meutitulo.runtime().substring(0, 2));
+    }
+
     public void exibeFichaTecnica() {
         System.out.println("Nome do filme: " + nome);
         System.out.println("Ano de lançamento:" + anoDeLancamento);
@@ -69,4 +81,10 @@ public class Titulos implements Comparable<Titulos>{
         return this.getNome().compareTo(outroTitulo.getNome());
     }
 
+    @Override
+    public String toString() {
+        return "\nTítulo: " + nome +
+                "\nAno de Lançamento: " + anoDeLancamento +
+                "\nDuração em Minutos: " + duracaoEmMinutos;
+    }
 }

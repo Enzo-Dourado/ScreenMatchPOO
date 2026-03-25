@@ -1,0 +1,22 @@
+[
+  {
+    "Nome": "Enzo",
+    "Idade": 20,
+    "Descricao": "Muito Lindo"
+  },
+  {
+    "Nome": "Victor",
+    "Idade": 21,
+    "Descricao": "Muito Fofo"
+  },
+  {
+    "Nome": "Roger",
+    "Idade": 19,
+    "Descricao": "Muito Gordo"
+  },
+  {
+    "Nome": "Daniela",
+    "Idade": 18,
+    "Descricao": "Muito Linda"
+  }
+]
