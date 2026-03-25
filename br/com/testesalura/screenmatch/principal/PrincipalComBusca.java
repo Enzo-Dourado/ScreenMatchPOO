@@ -1,5 +1,6 @@
 package br.com.testesalura.screenmatch.principal;
 
+import br.com.testesalura.screenmatch.excecoes.ErroNoConversorDeAnoDeLancamentoException;
 import br.com.testesalura.screenmatch.modelos.TituloOmdb;
 import br.com.testesalura.screenmatch.modelos.Titulos;
 import com.google.gson.FieldNamingPolicy;
@@ -47,6 +48,9 @@ public class PrincipalComBusca {
 
         } catch (IllegalArgumentException e) {
             System.out.println("Erro de busca capturado: " + e.getMessage());
+
+        } catch(ErroNoConversorDeAnoDeLancamentoException e) {
+            System.out.println("Erro no conversor de ano de lancamento: " + e.getMessage());
         }
 
     }

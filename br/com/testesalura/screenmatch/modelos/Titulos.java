@@ -1,13 +1,10 @@
 package br.com.testesalura.screenmatch.modelos;
 
-import com.google.gson.annotations.SerializedName;
+import br.com.testesalura.screenmatch.excecoes.ErroNoConversorDeAnoDeLancamentoException;
 
 public class Titulos implements Comparable<Titulos>{
 
-    @SerializedName("Title")
     private String nome;
-
-    @SerializedName("Year")
     private int anoDeLancamento;
     private int duracaoEmMinutos;
     private boolean incluidoNoPlano;
@@ -21,6 +18,9 @@ public class Titulos implements Comparable<Titulos>{
 
     public Titulos(TituloOmdb meutitulo) {
         this.nome = meutitulo.title();
+        if (meutitulo.year().length() > 4) {
+            throw new ErroNoConversorDeAnoDeLancamentoException("Valor inválido dentro do campo ano de lançamento!");
+        }
         this.anoDeLancamento = Integer.parseInt(meutitulo.year());
         this.duracaoEmMinutos = Integer.parseInt(meutitulo.runtime().substring(0, 2));
     }
