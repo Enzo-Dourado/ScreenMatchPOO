@@ -1,8 +1,13 @@
 package br.com.testesalura.screenmatch.modelos;
 
+import com.google.gson.annotations.SerializedName;
+
 public class Titulos implements Comparable<Titulos>{
 
+    @SerializedName("Title")
     private String nome;
+
+    @SerializedName("Year")
     private int anoDeLancamento;
     private int duracaoEmMinutos;
     private boolean incluidoNoPlano;

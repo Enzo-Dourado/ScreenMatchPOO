@@ -1,5 +1,8 @@
 package br.com.testesalura.screenmatch.principal;
 
+import br.com.testesalura.screenmatch.modelos.Titulos;
+import com.google.gson.Gson;
+
 import java.io.IOException;
 import java.net.URI;
 import java.net.http.HttpClient;
@@ -23,6 +26,12 @@ public class PrincipalComBusca {
         HttpResponse<String> response = client
                 .send(request, HttpResponse.BodyHandlers.ofString());
 
-        System.out.println(response.body());
+        String json = response.body();
+        System.out.println(json);
+
+        Gson gson = new Gson();
+        Titulos meutitulo = gson.fromJson(json, Titulos.class);
+        System.out.println("Titulo: " + meutitulo.getNome());
+        System.out.println("Ano de Lancamento: " + meutitulo.getAnoDeLancamento());
     }
 }
